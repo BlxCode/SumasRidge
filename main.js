@@ -1,3 +1,3 @@
+import { initializeEngine } from "./assets/scripts/init.js";
 
-
-engineInit()
+engineInit(initializeEngine());
