@@ -1,0 +1,2 @@
+let gameTextures = {};
+export {gameTextures};

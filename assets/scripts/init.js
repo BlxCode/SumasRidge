@@ -1,16 +1,26 @@
 import { gameData } from "./databaseShit.js";
+import { gameTextures } from "./loadAllTextures.js";
 let player;
-
+let terrainList = [];
 function initializeEngine() {
 
-const playerTextureImg = new Image();
 
 
-    player = new EngineObject(vec2(0,0), vec2(0,0));
+
+
+
+  class Terrain extends EngineObject{
     
+      constructor(type, x,y) {
+super(vec2(x,y), vec2(1,1), playerTextureImg);
+terrainList.push();
 
 
 
+      }
 
+
+
+}
 }
 export { initializeEngine };
