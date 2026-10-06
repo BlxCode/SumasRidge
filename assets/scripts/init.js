@@ -1,7 +1,7 @@
 import { gameData } from "./databaseShit.js";
 import { gameTextures } from "./loadAllTextures.js";
 let player;
-let terrainList = [];
+let terrainList = {};
 function initializeEngine() {
 
 
@@ -14,8 +14,9 @@ function initializeEngine() {
       constructor(type, x,y) {
 super(vec2(x,y), vec2(1,1), gameTextures.terrain[type],0,WHITE,-1);
 
-terrainList.push();
 
+
+terrainList[`${x},${y}`] = this;
 
 
       }
