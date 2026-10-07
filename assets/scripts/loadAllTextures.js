@@ -1,31 +1,27 @@
-let gameTextureNames = [
-    "cereal",
-    "cerealSeeds",
-    "cornStages",
-    "terrain",
-    "wheatStages",
-];
+import * as ljs from "littlejsengine";
+let tileInfoCoords = null;
 
-function loadImage(textureName) {
-    return new Promise((resolve, reject) => {
-        let image = new Image();
-        image.addEventListener("load", () => resolve(image), { once: true });
-        image.addEventListener("error", reject, { once: true });
-        image.src = `assets/images/${textureName}.png`;
-    });
-}
+ function getTileInfoCoords() {
+    if(!tileInfoCoords){
 
-async function loadGameTextures() {
-    let textureSheet = new TextureSheet();
-    let gameTextures = {};
 
-    for (let textureName of gameTextureNames) {
-        let image = await loadImage(textureName);
-        let imageSize = vec2(image.width, image.height);
-        gameTextures[textureName] = textureSheet.tryAdd(imageSize);
+
+  fetch("assets/scripts/tileInfoCoords.json")
+  .then((response)=>{
+     return response.text();
+      })
+  .then((data)=>{
+    console.log(data)
+    if(data != undefined && data){
+    tileInfoCoords = JSON.parse(data);
     }
+  })
 
-    return gameTextures;
+
+    }
 }
-
-export { loadGameTextures };
+let tileInfos = {};
+getTileInfoCoords()
+let gameTextures = {};
+let loadGameTextures = {}
+export { gameTextures, loadGameTextures };

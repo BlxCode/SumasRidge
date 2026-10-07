@@ -1,0 +1,30 @@
+{
+  "name": "sumasridge",
+  "version": "1.0.0",
+  "description": "Sumas Ridge is a stardew valley clone but build on the web",
+  "keywords": [
+    "stardew",
+    "valley"
+  ],
+  "homepage": "https://github.com/BlxCode/SumasRidge#readme",
+  "bugs": {
+    "url": "https://github.com/BlxCode/SumasRidge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlxCode/SumasRidge.git"
+  },
+  "license": "ISC",
+  "author": "blxcode",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "littlejsengine": "^1.25.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.3"
+  }
+}
