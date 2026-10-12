@@ -1,117 +1,382 @@
 {
-  "imageList": [
-    "cereal",
-    "cerealSeeds",
-    "cornStages",
-    "terrain",
-    "wheatStages",
-    "none",
-    "undefined"
-  ],
-  "undefined": {
-    "x": 0,
-    "y": 0,
-    "sX": 2,
-    "sY": 2,
-    "img": "undefined"
-  },
-  "none": {
-    "x": 0,
-    "y": 0,
-    "sX": 2,
-    "sY": 2,
-    "img": "none"
-  },
-  "wheatStage1": {
-    "x": 0,
-    "y": 0,
-    "sX": 16,
-    "sY": 24,
-    "img": "wheatStages"
-  }, 
-  "wheatStage2": {
-    "x": 0,
-    "y": 24,
-    "sX": 16,
-    "sY": 24,
-    "img": "wheatStages"
-  },
-   "wheatStage3": {
-    "x": 0,
-    "y": 48,
-    "sX": 16,
-    "sY": 24,
-    "img": "wheatStages"
-  },
-   "wheatStage4": {
-    "x": 0,
-    "y": 72,
-    "sX": 16,
-    "sY": 24,
-    "img": "wheatStages"
-  },
-  "cornStage1": {
-    "x": 0,
-    "y": 0,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-   "cornStage2": {
-    "x": 0,
-    "y": 24,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-   "cornStage3": {
-    "x": 0,
-    "y": 48,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-   "cornStage4": {
-    "x": 0,
-    "y": 72,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-  "cornStage5": {
-    "x": 0,
-    "y": 96,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-  "cornStage6": {
-    "x": 0,
-    "y": 120,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-  "cornStage7": {
-    "x": 0,
-    "y": 144,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-  "cornStage8": {
-    "x": 0,
-    "y": 168,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  },
-  "cornStage9": {
-    "x": 0,
-    "y": 192,
-    "sX": 32,
-    "sY": 48,
-    "img": "cornStages"
-  }
+  "metaData": {
+    "version": "1.0",
+    "type": "tileInfoCoords",
 
+    "imageList": [
+      "cereal",
+      "cerealSeeds",
+      "cornStages",
+      "terrain",
+      "wheatStages",
+      "none",
+      "undefined",
+      "guy"
+    ]
+  },
+  "textures": {
+    "undefined": {
+      "name": "undefined",
+      "x": 0,
+      "y": 0,
+      "sX": 2,
+      "sY": 2,
+      "img": "undefined"
+    },
+    "none": {
+      "name": "none",
+      "x": 0,
+      "y": 0,
+      "sX": 2,
+      "sY": 2,
+      "img": "none"
+    },
+    "wheatStage1": {
+      "name": "wheatStage1",
+      "x": 0,
+      "y": 0,
+      "sX": 16,
+      "sY": 24,
+      "img": "wheatStages"
+    },
+    "wheatStage2": {
+      "name": "wheatStage2",
+      "x": 0,
+      "y": 24,
+      "sX": 16,
+      "sY": 24,
+      "img": "wheatStages"
+    },
+    "wheatStage3": {
+      "name": "wheatStage3",
+      "x": 0,
+      "y": 48,
+      "sX": 16,
+      "sY": 24,
+      "img": "wheatStages"
+    },
+    "wheatStage4": {
+      "name": "wheatStage4",
+      "x": 0,
+      "y": 72,
+      "sX": 16,
+      "sY": 24,
+      "img": "wheatStages"
+    },
+    "cornStage1": {
+      "name": "cornStage1",
+      "x": 0,
+      "y": 0,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage2": {
+      "name": "cornStage2",
+      "x": 0,
+
+      "y": 24,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage3": {
+      "name": "cornStage3",
+      "x": 0,
+      "y": 48,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage4": {
+      "name": "cornStage4",
+      "x": 0,
+      "y": 72,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage5": {
+      "name": "cornStage5",
+      "x": 0,
+      "y": 96,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+
+    "cornStage6": {
+      "name": "cornStage6",
+      "x": 0,
+      "y": 120,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage7": {
+      "name": "cornStage7",
+      "x": 0,
+      "y": 144,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage8": {
+      "name": "cornStage8",
+      "x": 0,
+      "y": 168,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "cornStage9": {
+      "name": "cornStage9",
+      "x": 0,
+      "y": 192,
+      "sX": 32,
+      "sY": 48,
+      "img": "cornStages"
+    },
+    "terrainGrass": {
+      "name": "terrainGrass",
+      "x": 0,
+      "y": 0,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassBR": {
+      "name": "terrainGrassBR",
+      "x": 0,
+      "y": 9,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTL": {
+      "name": "terrainGrassTL",
+      "x": 0,
+      "y": 18,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassB": {
+      "name": "terrainGrassB",
+      "x": 0,
+      "y": 27,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassBHR": {
+      "name": "terrainGrassBHR",
+      "x": 0,
+      "y": 36,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassBHL": {
+      "name": "terrainGrassBHL",
+      "x": 0,
+      "y": 45,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassT": {
+      "name": "terrainGrassT",
+      "x": 0,
+      "y": 54,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTHR": {
+      "name": "terrainGrassTHR",
+      "x": 0,
+      "y": 63,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTHL": {
+      "name": "terrainGrassTHL",
+      "x": 0,
+      "y": 72,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTR": {
+      "name": "terrainGrassTR",
+      "x": 0,
+      "y": 81,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassBL": {
+      "name": "terrainGrassBL",
+      "x": 0,
+      "y": 90,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassL": {
+      "name": "terrainGrassL",
+
+      "x": 0,
+      "y": 99,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassR": {
+      "name": "terrainGrassR",
+      "x": 0,
+      "y": 108,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassLB": {
+      "name": "terrainGrassLB",
+      "x": 0,
+      "y": 117,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassLT": {
+      "name": "terrainGrassLT",
+      "x": 0,
+      "y": 126,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassRT": {
+      "name": "terrainGrassRT",
+      "x": 0,
+      "y": 135,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassRB": {
+      "name": "terrainGrassRB",
+      "x": 0,
+      "y": 144,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainDirt": {
+      "name": "terrainDirt",
+      "x": 0,
+      "y": 153,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainDirtTilledWatered": {
+      "name": "terrainDirtTilledWatered",
+      "x": 0,
+      "y": 162,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainDirtTilled": {
+      "name": "terrainDirtTilled",
+      "x": 0,
+      "y": 171,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTilled": {
+      "name": "terrainGrassTilled",
+      "x": 0,
+      "y": 180,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassTilledWatered": {
+      "name": "terrainGrassTilledWatered",
+      "x": 0,
+      "y": 189,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerTRf": {
+      "name": "terrainGrassCornerTRf",
+      "x": 0,
+      "y": 198,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerTLf": {
+      "name": "terrainGrassCornerTLf",
+      "x": 0,
+      "y": 207,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerBLf": {
+      "name": "terrainGrassCornerBLf",
+      "x": 0,
+      "y": 216,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerBRf": {
+      "name": "terrainGrassCornerBRf",
+      "x": 0,
+      "y": 225,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerBRs": {
+      "name": "terrainGrassCornerBRs",
+      "x": 0,
+      "y": 234,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerTLs": {
+      "name": "terrainGrassCornerTLs",
+      "x": 0,
+      "y": 243,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerTRs": {
+      "name": "terrainGrassCornerTRs",
+      "x": 0,
+      "y": 252,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    },
+    "terrainGrassCornerBLs": {
+      "name": "terrainGrassCornerBLs",
+      "x": 0,
+      "y": 261,
+      "sX": 9,
+      "sY": 9,
+      "img": "terrain"
+    }
+  }
 }

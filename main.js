@@ -1,4 +1,10 @@
 import { initializeEngine } from "./assets/scripts/init.js";
-import  * as ljs  from "littlejsengine";
-ljs.engineInit(initializeEngine());
+import { texturesReady } from "./assets/scripts/loadAllTextures.js";
 
+import  * as ljs  from "littlejsengine";
+
+
+texturesReady.then(() => {
+    console.log("textures loaded event received");
+    ljs.engineInit(initializeEngine);
+});

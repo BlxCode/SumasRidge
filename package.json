@@ -23,8 +23,9 @@
     "build": "vite build"
   },
   "dependencies": {
-    "littlejsengine": "^1.25.0",
+    "littlejsengine": "*",
     "tailwindcss": "^4.3.3",
     "vite": "^8.3.3"
   }
 }
+ 
