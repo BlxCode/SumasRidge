@@ -377,6 +377,135 @@
       "sX": 9,
       "sY": 9,
       "img": "terrain"
+    },
+
+    "guyIdleD": {
+      "name": "guyIdleD",
+      "x": 0,
+      "y": 0,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkD1": {
+      "name": "guyWalkD1",
+      "x": 0,
+      "y": 21,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkD2": {
+      "name": "guyWalkD2",
+      "x": 0,
+      "y": 42,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkD3": {
+      "name": "guyWalkD3",
+      "x": 0,
+      "y": 63,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyIdleR": {
+      "name": "guyIdleR",
+      "x": 0,
+      "y": 84,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkR1": {
+      "name": "guyWalkR1",
+      "x": 0,
+      "y": 105,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkR2": {
+      "name": "guyWalkR2",
+      "x": 0,
+      "y": 126,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkR3": {
+      "name": "guyWalkR3",
+      "x": 0,
+      "y": 147,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyIdleL": {
+      "name": "guyIdleL",
+      "x": 0,
+      "y": 168,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkL1": {
+      "name": "guyWalkL1",
+      "x": 0,
+      "y": 189,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkL2": {
+      "name": "guyWalkL2",
+      "x": 0,
+      "y": 210,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkL3": {
+      "name": "guyWalkL3",
+      "x": 0,
+      "y": 231,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyIdleU": {
+      "name": "guyIdleU",
+      "x": 0,
+      "y": 252,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkU1": {
+      "name": "guyWalkU1",
+      "x": 0,
+      "y": 273,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkU2": {
+      "name": "guyWalkU2",
+      "x": 0,
+      "y": 294,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
+    },
+    "guyWalkU3": {
+      "name": "guyWalkU3",
+      "x": 0,
+      "y": 315,
+      "sX": 13,
+      "sY": 21,
+      "img": "guy"
     }
   }
 }
