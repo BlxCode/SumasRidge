@@ -11,7 +11,8 @@
       "wheatStages",
       "none",
       "undefined",
-      "guy"
+      "guy",
+      "playerShadow"
     ]
   },
   "textures": {
@@ -506,6 +507,14 @@
       "sX": 13,
       "sY": 21,
       "img": "guy"
+    },
+    "playerShadow": {
+      "name": "playerShadow",
+      "x": 0,
+      "y": 0,
+      "sX": 16,
+      "sY": 16,
+      "img": "playerShadow"
     }
   }
 }
