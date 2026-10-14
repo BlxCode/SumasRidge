@@ -5,7 +5,7 @@ let textureInfos = {};
 
 async function getTileInfoCoords() {
   if (!tileInfoCoords) {
-    await fetch("assets/scripts/tileInfoCoords.json")
+    await fetch("/scripts/tileInfoCoords.json")
       .then((response) => {
         return response.text();
       })
@@ -25,7 +25,7 @@ async function getTileInfoCoords() {
 
                 img.addEventListener("error", reject);
 
-                img.src = `assets/art/${imageName}.png`;
+                img.src = `/art/${imageName}.png`;
               });
             }),
           );

@@ -7,7 +7,7 @@ let terrainList = {};
 let plantMetaData;
 let plantList = {};
 async function getPlantMetaData() {
-  await fetch("assets/scripts/plantMetadata.json")
+  await fetch("/scripts/plantMetadata.json")
     .then((response) => {
       return response.text();
     })
