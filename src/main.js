@@ -1,5 +1,5 @@
-import { initializeEngine, metadataReady } from "./src/init.js";
-import { texturesReady } from "./src/loadAllTextures.js";
+import { initializeEngine, metadataReady } from "./init.js";
+import { texturesReady } from "./loadAllTextures.js";
 import  * as ljs  from "littlejsengine";
 
 metadataReady.then(() => {
