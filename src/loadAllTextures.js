@@ -5,7 +5,7 @@ let textureInfos = {};
 
 async function getTileInfoCoords() {
   if (!tileInfoCoords) {
-    await fetch("/scripts/tileInfoCoords.json")
+    await fetch("/src/tileInfoCoords.json")
       .then((response) => {
         return response.text();
       })
