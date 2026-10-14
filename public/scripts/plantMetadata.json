@@ -1,0 +1,19 @@
+{
+    "wheat":{
+        "stages":4,
+        "repeatStage": false,
+        "price": 10,
+        "harvestMax": 5,
+        "harvestMin": 2,
+        "sellPrice": 8
+        
+    },
+    "corn":{
+        "stages":9,
+        "repeatStage": 8,
+        "price": 25,
+        "harvestMax": 3,
+        "harvestMin": 1,
+        "sellPrice": 10
+    }
+}

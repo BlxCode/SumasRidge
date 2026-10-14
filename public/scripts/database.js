@@ -36,6 +36,7 @@ const defaultDBInfo = {
   },
   crops: {},
   mapChanges: {},
+  day: 1,
 };
 
 if (localStorage.getItem("player") === null) {
@@ -43,6 +44,7 @@ if (localStorage.getItem("player") === null) {
   localStorage.setItem("inventory", JSON.stringify(defaultDBInfo.inventory));
   localStorage.setItem("crops", JSON.stringify(defaultDBInfo.crops));
   localStorage.setItem("mapChanges", JSON.stringify(defaultDBInfo.mapChanges));
+  localStorage.setItem("day", JSON.stringify(defaultDBInfo.day));
 }
 
 let gameData = {
@@ -50,6 +52,7 @@ let gameData = {
   inventory: JSON.parse(localStorage.getItem("inventory")),
   crops: JSON.parse(localStorage.getItem("crops")),
   mapChanges: JSON.parse(localStorage.getItem("mapChanges")),
+  day: localStorage.getItem("day"),
 };
 
 window.addEventListener("beforeunload", () => {
@@ -57,5 +60,6 @@ window.addEventListener("beforeunload", () => {
   localStorage.setItem("inventory", JSON.stringify(gameData.inventory));
   localStorage.setItem("crops", JSON.stringify(gameData.crops));
   localStorage.setItem("mapChanges", JSON.stringify(gameData.mapChanges));
+  localStorage.setItem("day", gameData.day);
 });
 export { gameData };

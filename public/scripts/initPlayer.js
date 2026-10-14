@@ -1,7 +1,14 @@
 import * as ljs from "littlejsengine";
 import { gameTextures } from "./loadAllTextures.js";
+import { terrainList } from "./init.js";
 
-class Player extends ljs.EngineObject {
+const terrainColors = {
+  grass: new ljs.Color(0.2, 0.8, 0.2),
+  dirt: new ljs.Color(0.5, 0.3, 0.1),
+  water: new ljs.Color(0.1, 0.1, 0.8),
+};
+
+class PlayerClass extends ljs.EngineObject {
   constructor(x, y) {
     super(ljs.vec2(x, y), ljs.vec2(0.8, 0.2));
     this.direction = "d";
@@ -13,6 +20,39 @@ class Player extends ljs.EngineObject {
     this.centerPos = this.pos.add(this.offset);
     // adjust draw position to be at the bottom of the object
     // get correct anim frame
+    // particles
+
+    if (ljs.keyDirection().x != 0 || ljs.keyDirection().y != 0) {
+      if (
+        terrainList[`${Math.round(this.pos.x)},${Math.round(this.pos.y)}`] !==
+        undefined
+      ) {
+        const terrainColor =
+          terrainColors[
+            terrainList[`${Math.round(this.pos.x)},${Math.round(this.pos.y)}`]
+              .terrainType
+          ];
+        const particleWalk = new ljs.ParticleEmitter(
+          ljs.vec2(this.pos.x, this.pos.y),
+          0,
+          ljs.vec2(0.1, 0.01),
+          0.1,
+          10,
+          180,
+          undefined,
+          terrainColor ?? ljs.BLACK,
+          terrainColor ?? ljs.BLACK,
+          ljs.CLEAR_WHITE,
+          ljs.CLEAR_WHITE,
+          0.1,
+          0.1,
+          0.1,
+        );
+        setTimeout(() => {
+          particleWalk.destroy(true);
+        }, 100);
+      }
+    }
     if (ljs.keyDirection().x == 0 && ljs.keyDirection().y == 0) {
       this.tileInfo = gameTextures[`guyIdle${this.direction.toUpperCase()}`];
     } else {
@@ -28,7 +68,6 @@ class Player extends ljs.EngineObject {
       ljs.vec2(1.05),
       gameTextures["playerShadow"],
       new ljs.Color(0, 0, 0, 0.5),
-     
     );
     ljs.drawTile(
       this.centerPos,
@@ -37,7 +76,6 @@ class Player extends ljs.EngineObject {
       this.color,
       this.angle,
     );
-    
   }
   update() {
     // apply movement controls
@@ -70,4 +108,4 @@ class Player extends ljs.EngineObject {
     ljs.setCameraPos(this.pos.add(ljs.vec2(0, 2)));
   }
 }
-export { Player };
+export { PlayerClass };
