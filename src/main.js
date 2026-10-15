@@ -1,10 +1,12 @@
+"use strict";
 import { initializeEngine, metadataReady } from "./init.js";
 import { texturesReady } from "./loadAllTextures.js";
-import  * as ljs  from "littlejsengine";
+import { gameUpdate } from "./gameUpdate.js";
+import * as ljs from "littlejsengine";
 
 metadataReady.then(() => {
-texturesReady.then(() => {
+  texturesReady.then(() => {
     console.log("textures loaded event received");
-    ljs.engineInit(initializeEngine);
-});
+    ljs.engineInit(initializeEngine, gameUpdate);
+  });
 });

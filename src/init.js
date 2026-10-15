@@ -18,8 +18,68 @@ async function getPlantMetaData() {
         return plantMetaData;
       }
     });
-  
 }
+
+class ProxPrompt extends ljs.EngineObject {
+  constructor(x, y, text) {
+    super(
+      ljs.vec2(x, y),
+      ljs.vec2(1, 1),
+      0,
+      ljs.WHITE,
+      Infinity,
+    );
+    this.text = text;
+    this.shown = true;
+    this.pressedState = "unPressed";
+  }
+  render() {
+    if (this.shown) {
+      if(this.pressedState === "unPressed"){ 
+      ljs.drawTile(
+        gameTextures["proxPrompt"],
+        this.pos.subtract(ljs.vec2(0.2, 0)),
+        this.size,
+        0,
+        this.color,
+        this.renderOrder,
+      );
+      ljs.drawTile(
+        gameTextures["proxPromptText"+this.text],
+        this.pos,
+        this.size,
+        0,
+        this.color,
+        this.renderOrder,
+      );
+
+    }
+  }
+  }
+  update() {
+    if (this.shown) {
+      this.color = ljs.WHITE;
+    } else {
+      this.color = ljs.CLEAR_WHITE;
+    }
+    //press detection
+    if (player.pos.distance(this.pos) <= 1.5) {
+      if (ljs.keyIsDown("KeyE")) {
+        this.pressedState = "down";
+      }
+      if (ljs.keyWasReleased("KeyE")) {
+        this.pressedState = "pressed";
+        window.dispatchEvent(
+          new CustomEvent("proxPromptPressed", { detail: this.text }),
+        );
+      }
+    }
+  }
+  delete() {
+    super.delete();
+  }
+}
+
 class Plant extends ljs.EngineObject {
   constructor(type, x, y) {
     super(
@@ -31,6 +91,7 @@ class Plant extends ljs.EngineObject {
       -this.pos.y,
     );
     this.type = type;
+    this.plantedDay = gameData.day;
   }
   update() {
     this.renderOrder = -this.pos.y;
