@@ -21,10 +21,11 @@ async function getPlantMetaData() {
 }
 
 class ProxPrompt extends ljs.EngineObject {
-  constructor(x, y, text) {
+  constructor(x, y, text, dissapearOnPress = true, deleteOnPress = false) {
     super(
       ljs.vec2(x, y),
-      ljs.vec2(1, 1),
+      ljs.vec2(1.5, 0.45),
+      undefined,
       0,
       ljs.WHITE,
       Infinity,
@@ -32,46 +33,57 @@ class ProxPrompt extends ljs.EngineObject {
     this.text = text;
     this.shown = true;
     this.pressedState = "unPressed";
+    this.canBeShown = true;
+    this.dissapearOnPress = dissapearOnPress;
+    this.deleteOnPress = deleteOnPress;
   }
   render() {
-    if (this.shown) {
-      if(this.pressedState === "unPressed"){ 
-      ljs.drawTile(
-        gameTextures["proxPrompt"],
-        this.pos.subtract(ljs.vec2(0.2, 0)),
-        this.size,
-        0,
-        this.color,
-        this.renderOrder,
-      );
-      ljs.drawTile(
-        gameTextures["proxPromptText"+this.text],
-        this.pos,
-        this.size,
-        0,
-        this.color,
-        this.renderOrder,
-      );
-
-    }
-  }
-  }
-  update() {
-    if (this.shown) {
+    if (this.shown && this.canBeShown) {
       this.color = ljs.WHITE;
+      ljs.drawTile(
+        this.pos.subtract(ljs.vec2(0.29, 0)),
+        ljs.vec2(0.45, 0.45),
+        gameTextures["proxPrompt" + this.pressedState],
+
+        this.color,
+      );
+      ljs.drawTile(
+        this.pos.add(ljs.vec2(0.4, 0)),
+        ljs.vec2(0.95, 0.45),
+        gameTextures["proxPromptText" + this.text],
+
+        this.color,
+      );
     } else {
       this.color = ljs.CLEAR_WHITE;
     }
+  }
+  update() {
     //press detection
-    if (player.pos.distance(this.pos) <= 1.5) {
+
+    if (player.pos.distance(this.pos) <= 2.5) {
+      this.shown = true;
       if (ljs.keyIsDown("KeyE")) {
         this.pressedState = "down";
       }
       if (ljs.keyWasReleased("KeyE")) {
         this.pressedState = "pressed";
         window.dispatchEvent(
-          new CustomEvent("proxPromptPressed", { detail: this.text }),
+          new CustomEvent("proxPromptPressed", { detail: this.text, x: this.pos.x, y: this.pos.y }),
         );
+        setTimeout(() => {
+        if(this.dissapearOnPress){
+          this.canBeShown = false;
+        }
+        if(this.deleteOnPress){
+          this.delete();
+        }
+      }, 50);
+      }
+    } else {
+      this.shown = false;
+      if(this.pressedState == "pressed" || this.pressedState == "down"){
+        this.pressedState = "unPressed";
       }
     }
   }
@@ -120,8 +132,8 @@ function initializeEngine() {
   new Terrain("terrainGrass", 1, 0, "grass");
   new Terrain("terrainGrass", 2, 0, "grass");
   //player
-
-  player = new PlayerClass(0, 0);
+  new ProxPrompt(1, 0, "Interact");
+  player = new PlayerClass();
   player.setCollision(true);
 
   // ljs settings

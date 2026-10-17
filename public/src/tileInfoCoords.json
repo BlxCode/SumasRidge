@@ -9,6 +9,7 @@
       "cornStages",
       "terrain",
       "wheatStages",
+      "SumasRidgeProximityPrompts",
       "none",
       "undefined",
       "guy",
@@ -515,6 +516,41 @@
       "sX": 16,
       "sY": 16,
       "img": "playerShadow"
+    },
+
+    "proxPromptunPressed": {
+      "name": "proxPromptunPressed",
+      "x": 1,
+      "y": 2,
+      "sX": 10,
+      "sY": 12,
+      "img": "SumasRidgeProximityPrompts"
+    },
+     "proxPromptpressed": {
+      "name": "proxPromptpressed",
+      "x": 1,
+      "y": 2,
+      "sX": 10,
+      "sY": 12,
+      "img": "SumasRidgeProximityPrompts"
+    },
+
+     "proxPromptdown": {
+      "name": "proxPromptdown",
+      "x": 1,
+      "y": 15,
+      "sX": 10,
+      "sY": 12,
+      "img": "SumasRidgeProximityPrompts"
+    },
+
+    "proxPromptTextInteract": {
+      "name": "proxPromptTextInteract",
+      "x": 12,
+      "y": 2,
+      "sX": 38,
+      "sY": 12,
+      "img": "SumasRidgeProximityPrompts"
     }
   }
 }

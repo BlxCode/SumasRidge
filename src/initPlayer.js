@@ -1,7 +1,7 @@
 import * as ljs from "littlejsengine";
 import { gameTextures } from "./loadAllTextures.js";
 import { terrainList } from "./init.js";
-
+import { gameData } from "./database.js";
 const terrainColors = {
   grass: new ljs.Color(0.2, 0.8, 0.2),
   dirt: new ljs.Color(0.5, 0.3, 0.1),
@@ -9,12 +9,16 @@ const terrainColors = {
 };
 
 class PlayerClass extends ljs.EngineObject {
-  constructor(x, y) {
+  constructor() {
+    const x = gameData.player.x || 0;
+    const y = gameData.player.y || 0;
     super(ljs.vec2(x, y), ljs.vec2(0.8, 0.2));
     this.direction = "d";
     this.drawSize = ljs.vec2(1, 1.6);
     this.offset = this.getUp(this.drawSize.y / 2);
     this.centerPos = this.pos.add(this.offset);
+    this.animWalkFrameChange = 5.5;
+    this.inventory = {};
   }
   render() {
     this.centerPos = this.pos.add(this.offset);
@@ -56,7 +60,7 @@ class PlayerClass extends ljs.EngineObject {
     if (ljs.keyDirection().x == 0 && ljs.keyDirection().y == 0) {
       this.tileInfo = gameTextures[`guyIdle${this.direction.toUpperCase()}`];
     } else {
-      const animFrame = (Math.floor(ljs.time * 5) % 4) + 1;
+      const animFrame = (Math.floor(ljs.time *this.animWalkFrameChange) % 4) + 1;
       this.tileInfo =
         gameTextures[
           `guyWalk${this.direction.toUpperCase()}${animFrame != 4 ? animFrame : 2}`
@@ -106,6 +110,11 @@ class PlayerClass extends ljs.EngineObject {
 
     // move camera with player
     ljs.setCameraPos(this.pos.add(ljs.vec2(0, 2)));
+
+
+
+    gameData.player.x = this.pos.x;
+    gameData.player.y = this.pos.y;
   }
 }
 export { PlayerClass };

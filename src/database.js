@@ -1,7 +1,7 @@
 "use strict";
 
 const defaultDBInfo = {
-  player: { money: 100, xp: 0 },
+  player: { money: 100, xp: 0,x: 0, y: 0, level: 1 },
   inventory: {
     0: { name: "woodenScythe", enchantTier: 0 },
     1: { name: "woodenHoe", enchantTier: 0 },
